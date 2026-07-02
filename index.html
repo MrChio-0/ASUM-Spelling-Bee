@@ -449,7 +449,7 @@
             document.getElementById('timer').classList.remove('timer-out');
             
             // 強制將關卡名稱轉為大寫，這樣 lvl 為 'fun' 時就會完美匹配 'LEVELFUN.PNG'
-            let bgFileName = `LEVEL${lvl.toString().toUpperCase()}.PNG`;
+            let bgFileName = `LEVEL${lvl}.png`; // 這會指向 LEVEL1.png 或 LEVELfun.png
             document.getElementById('game-page').style.backgroundImage = `url('${bgFileName}')`;
             showPage('game-page'); updateTimerDisplay(); nextWord();
             
