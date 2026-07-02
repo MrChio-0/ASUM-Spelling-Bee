@@ -448,7 +448,9 @@
             remainingTime = gameTimeLimit;
             document.getElementById('timer').classList.remove('timer-out');
             
-            document.getElementById('game-page').style.backgroundImage = `url('LEVEL${lvl}.png')`;
+            // 強制將關卡名稱轉為大寫，這樣 lvl 為 'fun' 時就會完美匹配 'LEVELFUN.PNG'
+            let bgFileName = `LEVEL${lvl.toString().toUpperCase()}.PNG`;
+            document.getElementById('game-page').style.backgroundImage = `url('${bgFileName}')`;
             showPage('game-page'); updateTimerDisplay(); nextWord();
             
             clearInterval(timerInterval);
